@@ -11,7 +11,7 @@
 <button (click)="getData(box.value)">Click me</button>
 <br>
 <p>
-    Display value is : {{displayVal}}
+    Display value is and using pipe for slice and upper case: {{displayVal | slice : 3 : 6 | uppercase}}
 </p>
 <br>
 <input type="text" #box1 (keydown)="getData(box1.value)"  placeholder="keydown event">
@@ -21,3 +21,28 @@
 <input type="text" #box3 (input)="getData(box3.value)"  placeholder="input event">
 <br>
 <h2 (mouseover)="getData('mouse over event working')"> Mouse over event</h2>
+
+<h2> If Else Check </h2>
+<h1 *ngIf ="checkIfElse; then ifBlock else elseBlock"></h1>
+<ng-template #ifBlock>   
+    <h1> THIS IS IF BLOCK</h1>
+</ng-template>
+<ng-template #elseBlock>   
+    <h1> THIS IS ELSE BLOCK</h1>
+</ng-template>
+
+<h2> Two way Binding </h2>
+<input type="text" [(ngModel)] = "customngModule">
+<h2>{{customngModule | uppercase}}</h2>
+
+
+<h2> pipi example and custom pipe</h2>
+<h2>{{user | json}}</h2>
+<h2>INR rupee 20 converted to USD is : {{20 | usdInr}}</h2>
+
+<h2> for loop example </h2>
+<ul>    
+    <li *ngFor="let data of users">
+       NAME : {{data.name }} and AGE : {{data.age}}
+    </li>
+</ul>

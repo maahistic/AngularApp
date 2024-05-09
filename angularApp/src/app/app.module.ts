@@ -7,18 +7,22 @@ import { UserListComponent } from './user-list/user-list.component';
 import { StudentListComponent } from './student-list/student-list.component';
 import { CountryListComponent } from './country-list/country-list.component';
 import { UserAuthModule } from './user-auth/user-auth.module';
+import { FormsModule } from '@angular/forms';
+import { UsdInrPipe } from './pipes/usd-inr.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserListComponent,
     StudentListComponent,
-    CountryListComponent
+    CountryListComponent,
+    UsdInrPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UserAuthModule
+    UserAuthModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
